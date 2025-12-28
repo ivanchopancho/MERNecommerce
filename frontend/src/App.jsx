@@ -13,9 +13,10 @@ function App() {
 
     // ### MAIN FETCH ###
     useEffect(() => {
+        const API_URL = import.meta.env.VITE_API_URL
         const fetchProducts = async () => {
             try {
-                const res = await fetch(import.meta.env.VITE_API_URL);
+                const res = await fetch(`${API_URL}/api/products`);
                 const data = await res.json();
                 setProducts(data);
             } catch (err) {
