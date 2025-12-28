@@ -1,3 +1,5 @@
+import fetch from "node-fetch"
+
 export async function fetchProducts() {
     const res = await fetch("https://fakestoreapi.com/products");
     if (!res.ok) {
