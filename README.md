@@ -55,10 +55,9 @@ frontend/
 git clone https://github.com/your-username/ecommerce.git
 cd ecommerce
 npm install
+```
 
-
-
-Learning Goals
+#Learning Goals
 
 This project was built to practice and demonstrate:
 
@@ -72,7 +71,7 @@ Debugging and incremental development
 
 Real-world project structure
 
-Future Improvements
+##Future Improvements:
 
 Authentication (JWT + middleware)
 
@@ -84,7 +83,9 @@ Improved frontend UI
 
 Deployment
 
-Author
+#Author
 
 Ivan Puentes
 Aspiring software developer focused on backend and full-stack development.
+
+
