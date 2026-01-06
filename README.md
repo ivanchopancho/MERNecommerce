@@ -55,3 +55,36 @@ frontend/
 git clone https://github.com/your-username/ecommerce.git
 cd ecommerce
 npm install
+
+
+
+Learning Goals
+
+This project was built to practice and demonstrate:
+
+Backend architecture and separation of concerns
+
+Database schema design and relationships
+
+REST API patterns
+
+Debugging and incremental development
+
+Real-world project structure
+
+Future Improvements
+
+Authentication (JWT + middleware)
+
+Authorization and role-based access
+
+Payment integration
+
+Improved frontend UI
+
+Deployment
+
+Author
+
+Ivan Puentes
+Aspiring software developer focused on backend and full-stack development.
