@@ -94,13 +94,17 @@ function App() {
     if (loading) return <p>Loading products...</p>
 
     return (
-        <div>
+        <div className="min-h-screen bg-zinc-950 text-zinc-100">
 
             <button
                 onClick={() => setCartOpen(true)}
-                className="fixed right-6 top-4 font-medium z-50 bg-blue-500 hover:bg-sky700 rounded p-1">
+                className="fixed right-6 top-4 z-50 flex items-center gap-2
+           rounded-full bg-zinc-800 px-4 py-2 text-sm font-medium
+           shadow-lg shadow-black/40
+           hover:bg-zinc-700 transition">
                 Cart {totalItems > 0 && (
-                    <span className="ml-2 inline-flex items-center justify-center rounded-full bg-blue-600 text-white text-xs w-6 h-6">
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full
+                 bg-indigo-600 text-xs font-semibold">
                         {totalItems}
                     </span>
                 )}
@@ -112,27 +116,29 @@ function App() {
                     <div className="flex-1 bg-black/40" onClick={() => setCartOpen(false)} />
 
                     {/* Drawer */}
-                    <div className="w-96 bg-white p-4 flex flex-col relative">
+                    <div className="w-96 bg-zinc-900 p-5 flex flex-col relative
+                border-l border-zinc-800">
                         <button
                             onClick={() => setCartOpen(false)}
-                            className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl hover:bg-red-600 p-2 rounded"
+                            className="absolute top-3 right-3 text-zinc-400 hover:text-white
+           rounded-md p-2 hover:bg-zinc-800 transition"
                             aria-label="Close cart"
                         >
                             X
                         </button>
 
-                        <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
+                        <h2 className="text-lg font-semibold tracking-wide mb-4">Your Cart</h2>
                         <div className="flex-1 overflow-y-auto space-y-2">
                             {cart.map(item => (
                                 <div
                                     key={item.product.id}
-                                    className="border-b pb-2 text-sm"
+                                    className="border-b border-zinc-800 pb-3 text-sm"
                                 >
                                     <p className="font-medium">{item.product.title}</p>
                                     <p>Amount: {item.quantity}</p>
                                     <button
                                         onClick={() => removeOneFromCart(item.product.id)}
-                                        className="text-red-600 text-xs"
+                                        className="mt-1 text-xs text-red-400 hover:text-red-300 transition"
                                     >
                                         Remove
                                     </button>
@@ -142,10 +148,12 @@ function App() {
                                 <p className="font-semibold">
                                     Subtotal: ${subtotal.toFixed(2)}
                                 </p>
-                                <button onClick={checkout} className="w-full mt-2 bg-blue-600 text-white py-2 rounded">
+                                <button onClick={checkout} className="w-full mt-2 bg-indigo-600 hover:bg-indigo-500
+                   text-white py-2 rounded-md font-medium transition">
                                     Checkout
                                 </button>
-                                <button onClick={clearCart} className="w-full text-white bg-red-600 p-1">Clear cart</button>
+                                <button onClick={clearCart} className="w-full bg-red-600 hover:bg-red-500
+                   text-white py-2 rounded-md transition">Clear cart</button>
                             </div>
 
                         </div>
@@ -154,16 +162,17 @@ function App() {
                 </div>
             )}
 
-            <header className="sticky top-0 bg-white border-b z-40">
+            <header className="sticky top-0 z-40 bg-zinc-950/80 backdrop-blur
+                   border-b border-zinc-800">
                 <div className="max-w-6xl mx-auto px-6 py-4 flex justify-center">
-                    <h1 className="text-2xl font-bold tracking-wide">
+                    <h1 className="text-xl font-bold tracking-widest text-indigo-400">
                         404Store
                     </h1>
                 </div>
             </header>
 
             <div className="
-            grid grid-cols-1 sm:grid-cols-2 md:cols-3 lg:grid-cols-4 gap-6 p-6 pb-48
+            grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 pb-48
             ">
 
 
